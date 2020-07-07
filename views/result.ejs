@@ -1,0 +1,28 @@
+<%- include("partials/header") %>
+<div class="container">
+<div class="header">
+    <h1>Movies: <br>	&#8595;</h1>
+</div>
+
+    <% var i = 0; %> 
+    <% data["Search"].forEach(function(movie){ %>
+        <div class="A">
+            <div class="Display">
+                <h2><%= movie["Title"] %></h2><br>
+                <h3>Realeased on : <%= movie["Year"] %></h3>
+                
+                
+            </div>
+            <div class="Display">
+                 <img src= <%= data["Search"][i].Poster %> > 
+            </div>
+        </div> 
+        
+            <% i++; %>
+            
+        
+    <% }); %>
+</div>
+<div id="footer"></div>
+
+<%- include("partials/footer") %>
