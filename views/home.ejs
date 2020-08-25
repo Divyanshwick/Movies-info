@@ -1,13 +1,39 @@
 <%- include("partials/header") %>
-<div class="header">
+<div class="container">
+
     <h1>Movie Info: </h1>
 
-    <form action="/result" method="GET">
+    <!-- <form action="/result" method="GET">
         <input type="text" name="title" placeholder="Enter movie name"><br>
         <button>Search...</button>
-    </form>
-</div>
-<div></div>
+    </form> -->
+    <section class="contact">
+        <div class="Box">
+            <div class="fBox">
+                <form action="/result" method="GET">
+                
+                    <legend><h2 style="font-size:3.5rem;font-weight:600; ">Hello There!!</h2></legend>
+                    <div class="iBox">
+                        <input type="text" name="title" required="required">
+                        <span>Enter Movie Name : </span>
+                    </div>
+                    
+                    <div class="iBox">
+                        <input type="submit" value="Search">
+                    </div>
+                
+                </form>
+            </div>
+          <div class="imgBx">
+          </div>
+        
+    </div>
+    
+    
+    </section>
+
+
 <div id="footer1"></div>
+</div>
 
 <%- include("partials/footer") %>
