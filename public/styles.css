@@ -10,12 +10,114 @@
     --prime : #8ee4af;
     --sec : #379683;
     --shadow : #000;
+    --btn-color : #edf5e1;
+}
+
+html{
+  --bg : #5cdb95;
+  --txt-color : #edf5e1;
+  --nav : #05386b;
+  --prime : #8ee4af;
+  --sec : #379683;
+  --shadow : #000;
+  --btn-color : #edf5e1;
+  --btn-bg : #edf5e1;
+  --btn-txt : #379683;
+}
+
+html[data-theme="dark"] {
+  --bg : #0b0c10;
+  --txt-color : #66fcf1;
+  --nav : #1f2833;
+  --prime : #66fcf1;
+  --sec : #66fcf1;
+  --shadow : #000;
+  --btn-color : #c5c6c7;
+  --btn-bg : #1f2833;
+  --btn-txt : #66fcf1;
+}
+
+html.transition,
+html.transition *,
+html.transition *:before,
+html.transition *:after {
+  transition: all 750ms !important;
+  transition-delay: 0 !important;
 }
 
 body{
     
     font-family: 'Kaushan Script', cursive;
 }
+
+/* Toggle Switch */
+.switch {
+  position: relative;
+  display: inline-block;
+  margin-top : 30px;
+  
+  width: 60px;
+  height: 34px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+.home-header {
+  display: flex;
+  justify-content: space-around;
+}
+
+
 .parent {
     background : var(--bg);
     
@@ -76,7 +178,7 @@ body{
     position: relative;
     background: transparent;
     width : 80%;
-    color : var(--txt-color);
+    color : var(--btn-color);
     border: none;
     outline: none;
     padding-bottom: 10px;
@@ -90,13 +192,13 @@ body{
     height : 100px;
   }
   .fBox form .iBox input[type="submit"] {
-    background : var(--txt-color);
+    background : var(--btn-bg);
     padding : 10px;
     margin-top: -10px;
     width : 120px;
     cursor: pointer;
-    border: 2px solid var(--sec);
-    border-bottom-color: var(--sec) !important;
+    border: 2px solid var(--btn-txt);
+    border-bottom-color: var(--btn-txt) !important;
     border-radius: 12px;
     color : var(--sec);
     font-size : 20px;
@@ -107,7 +209,7 @@ body{
   }
   .fBox form .iBox input[type="submit"]:hover {
     background: var(--prime) !important;
-    color : var(--txt-color) !important;
+    color : var(--btn-bg) !important;
     border-bottom-color: white !important;
   }
   .fBox form .iBox span {

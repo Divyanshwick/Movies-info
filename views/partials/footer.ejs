@@ -1,4 +1,23 @@
- 
+<script>
+           var chkBx = document.querySelector('input[name=theme]');
+
+chkBx.addEventListener('change',function() {
+    if(this.checked) {
+        trans()
+        document.documentElement.setAttribute('data-theme', 'dark')
+    } else {
+        trans()
+        document.documentElement.setAttribute('data-theme', 'light')
+    }
+})
+
+let trans = () => {
+    document.documentElement.classList.add('transition');
+    window.setTimeout(() => {
+        document.documentElement.classList.remove('transition')
+    }, 1000)
+}
+</script>
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script async src="https://unpkg.com/typer-dot-js@0.1.0/typer.js"></script>
 <script>AOS.init();</script>
