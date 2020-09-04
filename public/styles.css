@@ -13,7 +13,7 @@
     --btn-color : #edf5e1;
 }
 
-html{
+.light{
   --bg : #5cdb95;
   --txt-color : #edf5e1;
   --nav : #05386b;
@@ -25,7 +25,7 @@ html{
   --btn-txt : #379683;
 }
 
-html[data-theme="dark"] {
+.dark{
   --bg : #0b0c10;
   --txt-color : #66fcf1;
   --nav : #1f2833;
@@ -47,7 +47,9 @@ html.transition *:after {
 
 body{
     
-    font-family: 'Kaushan Script', cursive;
+  font-family: 'Kaushan Script', cursive;
+  background : var(--bg);
+
 }
 
 /* Toggle Switch */
@@ -114,7 +116,7 @@ input:checked + .slider:before {
 }
 .home-header {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 
@@ -276,11 +278,14 @@ input:checked + .slider:before {
 .show {
     margin-top : 20px;
     margin-bottom: 20px;
+    margin-left : 2px;
+    margin-right : 2px; 
   }
 
   .card {
     box-shadow : 5px 5px 10px var(--shadow);
     height : auto;
+    width : 23rem;
   }
   .card img {
     height : 250px;
@@ -341,5 +346,14 @@ input:checked + .slider:before {
 input{
     padding:5px;
     border:2px solid black;
+}
+
+@media (max-width : 406px) {
+  .card {
+    width : 20rem;
+  }
+  .home-header {
+    flex-direction: column;
+  }
 }
 

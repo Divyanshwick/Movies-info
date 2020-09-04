@@ -1,12 +1,16 @@
 <%- include("partials/header") %>
 <div class="parent">
-<div class="header">
-    <h1>Movies: <br>&#8595; &#8595;	&#8595;</h1>
-    <label class="switch">
-        <input type="checkbox" name="theme">
-        <span class="slider round"></span>
-  </label>
-</div>
+    <div class="container">
+        <span class="home-header">
+            
+            <h1>Movies </h1>
+            <label class="switch">
+                <input type="checkbox" id="theme-switch">
+                <span class="slider round"></span>
+            </label>
+            
+        </span>
+    </div>
 <div class="show" style="display: flex;flex-wrap:wrap; justify-content:center;align-items: center;">
 
     <% var i = 0; %> 
@@ -23,7 +27,7 @@
             </div>
         </div>  -->
         <div class="card mt-4 mb-4 ml-4 mr-4" data-aos="fade-up" data-aos-duration="800">
-            <div class="card" style="width:23rem">
+            <div class="card" >
             <img src= <%= data["Search"][i].Poster %> >
             <div class="card-body">
               <h4 class="card-title"><%= movie["Title"] %></h4>
@@ -44,6 +48,8 @@
     </div>
 
 <div id="footer"></div>
+
 </div>
+
 
 <%- include("partials/footer") %>

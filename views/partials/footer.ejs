@@ -1,21 +1,40 @@
 <script>
-           var chkBx = document.querySelector('input[name=theme]');
+var toggleBtn = document.getElementById("theme-switch");
+toggleBtn.checked = false;
 
-chkBx.addEventListener('change',function() {
+function clickToggle() {
     if(this.checked) {
-        trans()
-        document.documentElement.setAttribute('data-theme', 'dark')
+        trans();
+        document.body.classList.remove("light");
+        document.body.classList.add("dark");
+        localStorage.setItem("theme","dark");
     } else {
-        trans()
-        document.documentElement.setAttribute('data-theme', 'light')
+        trans();
+        document.body.classList.remove("dark");
+        document.body.classList.add("light");
+        localStorage.setItem("theme","light");
     }
-})
+}
 
+toggleBtn.addEventListener("click",clickToggle);
 let trans = () => {
     document.documentElement.classList.add('transition');
     window.setTimeout(() => {
         document.documentElement.classList.remove('transition')
     }, 1000)
+}
+
+window.onload() = chkTheme();
+
+function chkTheme() {
+    const localStorageTheme = localStorage.getItem("theme");
+
+    if(localStorageTheme !== null && localStorageTheme === "dark") {
+        document.body.className = localStorageTheme;
+
+        const themeSwitch = document.getItem("theme-switch");
+        themeSwitch.checked = true;
+    }
 }
 </script>
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
